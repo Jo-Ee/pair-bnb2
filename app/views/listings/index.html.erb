@@ -1,0 +1,32 @@
+<div class="container">
+
+  <div class="jumbotron"><h1>Find A Home</h1>
+  <p class="lead">Home away from home</p>
+  </div>
+
+  <p id="notice"><%= notice %></p>
+
+  <div class="row marketing">   
+
+    <% @listings.each do |listing| %>
+        <div class="col-lg-6">
+          <div class="each-listing">
+            <h4><%= listing.title %></h4>
+            <p><%= listing.description %></p>
+            <p>Location: <%= listing.location %></p>
+            <p>RM <%= listing.price %></p>
+
+            <% if listing.user_id == current_user.id %>
+              <p class="btn btn-sm btn-default"><%= link_to 'Edit', edit_listing_path(listing) %></p>
+              <p class="btn btn-sm btn-default"><%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+            <%else%>
+              <p class="btn btn-sm btn-default"><%= link_to 'Book', new_listing_reservation_path(listing) %></p>
+            <% end %>
+            </div>
+        </div>
+    <% end %>
+
+  </div>
+</div>
+
+<br>

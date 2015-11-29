@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+	</head>
+	<body>
+		<h1>Thank you for booking a stay with us, <%= @reservation.user.name%></h1>
+		<h3>Your reservation details:</h3>
+		<br>
+			<% unless @reservation.listing.image.nil?%>
+			<%= image_tag(@reservation.listing.image_url(:thumb).to_s) %>
+			<%end%>
+		<br>
+		<p><%= @reservation.listing.title %></p>
+		<p><%= @reservation.listing.description %></p>
+		<p><%= @reservation.listing.location %></p>
+		<p>*************************************************</p>
+		<p><%= @reservation.check_in_date %></p>
+		<p><%= @reservation.check_out_date %></p>
+		<p>RM <%= @reservation.total_price%></p>
+	</body>
+</html>

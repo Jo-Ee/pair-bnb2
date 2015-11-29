@@ -1,0 +1,56 @@
+<div id = "center">
+	<p id="notice"><% flash.each do |k| %>
+	<%= k %>
+	<%end%>
+	</p>
+	<% unless @listing.image.nil?%>
+	<%= image_tag(@listing.image_url(:thumb).to_s) %>
+	<%end%>
+</div>
+
+<div class = "container">
+  <div id = "center">
+  	<div class="row marketing">  
+  		<div class="each-listing">
+				<h4><%= @listing.title %></h4>
+
+				<p>
+				  <strong>Description:</strong>
+				  <%= @listing.description %>
+				</p>
+
+				<p>
+				  <strong>Location:</strong>
+				  <%= @listing.location %>
+				</p>
+
+				<p>
+				  <strong>Price:</strong>
+				  <%= @listing.price %>
+				</p>
+
+			</div>
+		</div>
+
+  <%= form_for [@listing, @reservation] do |f| %>
+	    <div class="form-horizontal">
+
+	      <div class="form-group">
+					<%= f.label :check_in_date %>
+					<%= f.date_field :check_in_date, autofocus: true, class: "form-control"%>
+				</div>
+
+	      <div class="form-group">
+					<%= f.label :check_out_date %>
+					<%= f.date_field :check_out_date, autofocus: true, class: "form-control"%>
+				</div>
+
+	      <div class="form-group">
+	        <%= f.submit "Book your place!", class: "btn btn-default" %>
+	      </div>
+
+	    </div>
+
+	  <%end%>
+	</div>
+</div>

@@ -1,0 +1,32 @@
+<div id = "center">
+<p id="notice"><%= notice %></p>
+
+<%= image_tag(@listing.image_url(:thumb).to_s) %>
+</div>
+<div class = "container">
+  <div id = "center">
+  	<div class="row marketing">  
+  		<div class="each-listing">
+				<h4><%= @listing.title %></h4>
+
+				<p>
+				  <strong>Description:</strong>
+				  <%= @listing.description %>
+				</p>
+
+				<p>
+				  <strong>Location:</strong>
+				  <%= @listing.location %>
+				</p>
+
+				<p>
+				  <strong>Price:</strong>
+				  <%= @listing.price %>
+				</p>
+
+				<%= link_to 'Edit', edit_listing_path(@listing) %> |
+				<%= link_to 'Back', listings_path %>
+			</div>
+		</div>
+	</div>
+</div>

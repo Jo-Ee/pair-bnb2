@@ -39,6 +39,10 @@ gem 'validates_overlap'
 gem 'carrierwave'
 gem 'rmagick'
 
+#payment braintree/sandbox
+gem 'braintree'
+gem 'gon', '~> 5.1.2'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -50,6 +54,7 @@ gem 'omniauth-facebook'
 
 #send email
 gem 'sidekiq'
+gem 'figaro'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

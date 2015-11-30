@@ -1,13 +1,19 @@
 Rails.application.routes.draw do
 
+  get 'transactions/new'
+
  root 'landing#index'
   # root :to => "listings#index"
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   resources :listings, shallow: true do
-    resources :reservations, only: [:new, :create]
+    resources :reservations, only: [:new, :create], shallow: true do
+      resources :transactions, only: [:new,:create]
+    end
   end
 
   get 'reservations/:id' => "reservations#show", as: 'reservation'
+
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

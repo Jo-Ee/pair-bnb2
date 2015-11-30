@@ -1,5 +1,6 @@
 class ReservationsController < ApplicationController
 
+
 	def new
 		@listing = current_listing
 		@reservation = @listing.reservations.new		
@@ -13,8 +14,9 @@ class ReservationsController < ApplicationController
 			@reservation[:user_id] = current_user.id
 			@reservation.save
 			flash[:success] = "Your reservation has been confirmed"
-			ReservationMailer.booking_email(@reservation).deliver_now
-			redirect_to reservation_path(current_listing)
+			ReservationWorker.perform_later(@reservation.id)
+			# ReservationMailer.booking_email(@reservation).deliver_now
+			redirect_to reservation_path(@reservation.id)
 		else
 			flash[:warning] = "Rooms are not available."
 			@listing = @reservation.listing

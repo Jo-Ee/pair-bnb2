@@ -1,0 +1,6 @@
+<%= form_tag reservation_transactions_path do%>
+  <%= render 'customer_form' %>
+  <p>Please enter your payment details:</p>
+  <div id="dropin"></div>
+  <%=submit_tag "Pay #{@total_amount}$", class: "button mt1" %>
+<%end%>

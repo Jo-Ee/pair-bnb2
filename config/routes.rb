@@ -5,11 +5,14 @@ Rails.application.routes.draw do
  root 'landing#index'
   # root :to => "listings#index"
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+  
   resources :listings, shallow: true do
     resources :reservations, only: [:new, :create], shallow: true do
       resources :transactions, only: [:new,:create]
     end
   end
+
+  
 
   get 'reservations/:id' => "reservations#show", as: 'reservation'
 

@@ -6,9 +6,8 @@ class TransactionsController < ApplicationController
   end
 
   def create
-  	byebug
   	@reservation = Reservation.find(params[:reservation_id])
-	@result = Braintree::Transaction.sale(
+	  @result = Braintree::Transaction.sale(
   		amount: @reservation.total_price,
   		payment_method_nonce: params[:payment_method_nonce])
   	if @result.success?

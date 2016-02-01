@@ -26,6 +26,11 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'aws-sdk', '~> 2'
+# To allow aws to serve assets
+gem "asset_sync"
+gem "fog", "~>1.20", require: "fog/aws/storage" 
+
 #bootstrap:
 gem 'bootstrap-sass', '~> 3.3.5'
 # gem 'sass-rails', '>= 3.2'

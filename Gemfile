@@ -59,7 +59,7 @@ gem 'omniauth-facebook'
 gem 'sidekiq'
 gem 'figaro'
 
-gem 'spring'
+# gem 'spring'
 # Use Unicorn as the app server
 gem 'unicorn'
 

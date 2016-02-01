@@ -12,7 +12,7 @@ class TransactionsController < ApplicationController
   		payment_method_nonce: params[:payment_method_nonce])
   	if @result.success?
   		@result
-  		redirect_to root_url, notice: "Congraulations! Your transaction has been successfully!"
+  		redirect_to root_url, notice: "Congralutions! Your transaction has been successfully!"
   	else
   	  flash[:alert] = "Something went wrong while processing your transaction. Please try again!"
       gon.client_token = generate_client_token

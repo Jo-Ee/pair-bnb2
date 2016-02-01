@@ -35,7 +35,7 @@ h6 {
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    background: url(../assets/landing-page.jpg) no-repeat center center;
+    background: url(https://s3-ap-southeast-1.amazonaws.com/pairbnb-assets/landing-page.jpg) no-repeat center center;
     background-size: cover;
 }
 

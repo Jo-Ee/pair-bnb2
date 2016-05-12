@@ -20,6 +20,17 @@ test:
   <<: *default
   database: my_database_test
 
+# production:
+#   <<: *default
+#   database: my_database_production
+
 production:
-  <<: *default
-  database: my_database_production
+  adapter: postgresql
+  encoding: unicode
+  database: pairbnb_production
+  port: 5432
+  host: pairbnb-production.ctkznkwxocdu.us-west-2.rds.amazonaws.com
+  pool: 5
+  timeout: 5000
+  username: pair_bnb
+  password: 12345678  

@@ -29,7 +29,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'aws-sdk', '~> 2'
 # To allow aws to serve assets
 # gem "asset_sync"
-# gem "fog", "~>1.20", require: "fog/aws/storage" 
+# gem "fog", "~>1.20", require: "fog/aws/storage"
 
 #bootstrap:
 gem 'bootstrap-sass', '~> 3.3.5'
@@ -68,12 +68,15 @@ gem 'spring'
 # Use Unicorn as the app server
 gem 'unicorn'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+group :development do
+    gem 'capistrano', '~> 3.4.0'
+    gem 'capistrano-bundler', '~> 1.1.2'
+    gem 'capistrano-rails', '~> 1.1.5'
+    gem 'capistrano-rbenv', '~> 2.0.3'
+    gem 'capistrano-faster-assets', '~> 1.0'
+    gem 'capistrano-rails-db'
+    gem 'capistrano-sidekiq', '0.5.3'
+    gem 'elbas'
 end
 
 group :development do
@@ -83,4 +86,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   # gem 'spring'
 end
-

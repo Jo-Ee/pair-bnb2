@@ -1,3 +1,19 @@
+#set :stage, :production
+#server '52.77.248.151', user: 'ubuntu', roles: %w{web app db}
+#
+#set :ssh_options, {
+#  user: "ubuntu",
+#  keys: ["~/.ec2/keypair.pem"]
+#}
+set :application, 'pair-bnb-production'
+set :stage, :production
+set :rails_env, :production
+set :deploy_to, '/home/deploy/pair-bnb-production'
+#set :release_note_url, 'http://mramirol.com/release_note.txt'
+
+server 'ec2-52-38-50-251.us-west-2.compute.amazonaws.com', user: 'deploy', roles: %w{web app db job}
+# autoscale 'ijual-ASG', user: 'deploy', roles: [:app, :web, :db]
+
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.

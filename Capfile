@@ -7,7 +7,7 @@ require 'capistrano/rails'
 require 'capistrano/faster_assets'
 require 'capistrano/rails/db'
 require 'capistrano/sidekiq'
-require 'whenever/capistrano'
+# require 'whenever/capistrano'
 require 'elbas/capistrano'
 
 # Include tasks from other gems included in your Gemfile
@@ -30,7 +30,7 @@ require 'elbas/capistrano'
 
 require 'capistrano/rbenv'
 set :rbenv_type, :user # or :system, depends on your rbenv setup
-set :rbenv_ruby, '2.2.3'
+set :rbenv_ruby, '2.2.4'
 #Rake::Task[:production].invoke
 
 require 'capistrano/bundler'

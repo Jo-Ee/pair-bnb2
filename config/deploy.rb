@@ -2,7 +2,7 @@
 # lock '3.4.1'
 
 set :application, 'pair-bnb'
-set :repo_url, 'git@github.com:Jo-Ee/pair-bnb.git'
+set :repo_url, 'git@github.com:Jo-Ee/pair-bnb2.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

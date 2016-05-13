@@ -11,7 +11,7 @@ set :rails_env, :production
 set :deploy_to, '/home/deploy/pair-bnb-production'
 #set :release_note_url, 'http://mramirol.com/release_note.txt'
 
-server 'ec2-52-38-50-251.us-west-2.compute.amazonaws.com', user: 'deploy', roles: %w{web app db job}
+server '52.34.245.120', user: 'deploy', roles: %w{web app db job}
 # autoscale 'ijual-ASG', user: 'deploy', roles: [:app, :web, :db]
 
 # server-based syntax
